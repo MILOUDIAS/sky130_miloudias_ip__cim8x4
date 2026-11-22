@@ -1,0 +1,15 @@
+
+* Composites drawn by make_cim_cell.py and make_vext_path.py, wired as generate.py wires one array cell / one column.
+.subckt cim_cell d wr wrb x q bus sam samb shr shrb vp vn
+Xw d wr wrb q vp vn weight
+Xa x q prod vp vn and2
+Xc prod bus sam samb shr shrb vp vn sample_cap
+.ends
+
+.subckt vext_path vext vsel vg ref sum vpa vp vn
+Xls1 vsel vsel_h vsel_hb vpa vp vn ls_hv
+Xls2 vg vg_h vg_hb vpa vp vn ls_hv
+Xin vext vxi vsel_h vsel_hb vpa vp vn vext_in
+Xvr vxi vg_h ref vn nvx
+Xvs vn vn sum vn nvx
+.ends

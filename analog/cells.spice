@@ -1,0 +1,93 @@
+* SPDX-License-Identifier: Apache-2.0
+* SKY130 schematic primitives; model dimensions are in micrometres.
+.subckt inv a y vp vn
+Xn y a vn vn sky130_fd_pr__nfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xp y a vp vp sky130_fd_pr__pfet_01v8 w=2 l=0.15 ad=0.58 as=0.58 pd=4.58 ps=4.58
+.ends
+
+.subckt tg a b en enb vp vn
+Xn a en b vn sky130_fd_pr__nfet_01v8 w=0.55 l=0.5 ad=0.1595 as=0.1595 pd=1.68 ps=1.68
+Xp a enb b vp sky130_fd_pr__pfet_01v8 w=1 l=0.5 ad=0.29 as=0.29 pd=2.58 ps=2.58
+.ends
+
+* Lower threshold on the sharing path aids mid-rail settling at cold, low VDD.
+.subckt tg_share a b en enb vp vn
+Xn a en b vn sky130_fd_pr__nfet_01v8_lvt w=0.55 l=0.5 ad=0.1595 as=0.1595 pd=1.68 ps=1.68
+Xp a enb b vp sky130_fd_pr__pfet_01v8_lvt w=1 l=0.5 ad=0.29 as=0.29 pd=2.58 ps=2.58
+.ends
+
+.subckt and2 a b y vp vn
+Xna n a mid vn sky130_fd_pr__nfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xnb mid b vn vn sky130_fd_pr__nfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xpa n a vp vp sky130_fd_pr__pfet_01v8 w=2 l=0.15 ad=0.58 as=0.58 pd=4.58 ps=4.58
+Xpb n b vp vp sky130_fd_pr__pfet_01v8 w=2 l=0.15 ad=0.58 as=0.58 pd=4.58 ps=4.58
+Xout n y vp vn inv
+.ends
+
+* Static TG latch. Feed the activation AND and digital sense bus from a buffer.
+.subckt weight d wr wrb qr vp vn
+Xwrite d hold wr wrb vp vn tg
+Xfeedback q hold wrb wr vp vn tg
+Xi1 hold qb vp vn inv
+Xi2 qb q vp vn inv
+Xrb1 q nbuf vp vn inv
+Xrb2 nbuf qr vp vn inv
+.ends
+
+* m scales nominal C and parallel resistance, mf scales area-dependent mismatch.
+* size counts identical 5 um square MiM elements in parallel.
+.subckt sample_cap src bus sam samb shr shrb vp vn params: size=4
+Xsam src plate sam samb vp vn tg
+Xshare plate bus shr shrb vp vn tg_share
+Xcap plate vn sky130_fd_pr__cap_mim_m3_1 w=5 l=5 m={size} mf={size}
+.ends
+
+* Dynamic differential comparator; left output discharges for sig > ref.
+.subckt compare sig ref ev decision vp vn
+Xtail tail ev vn vn sky130_fd_pr__nfet_01v8 w=1 l=0.4 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xis ml sig tail vn sky130_fd_pr__nfet_01v8_lvt w=4 l=0.35 ad=1.16 as=1.16 pd=8.58 ps=8.58
+Xir mr ref tail vn sky130_fd_pr__nfet_01v8_lvt w=4 l=0.35 ad=1.16 as=1.16 pd=8.58 ps=8.58
+Xnl ol oright ml vn sky130_fd_pr__nfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xnr oright ol mr vn sky130_fd_pr__nfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xpl ol oright vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.3 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xpr oright ol vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.3 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xrl ol ev vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xrr oright ev vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xrml ml ev vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xrmr mr ev vp vp sky130_fd_pr__pfet_01v8 w=1 l=0.15 ad=0.29 as=0.29 pd=2.58 ps=2.58
+Xolcap ol vn sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+Xorcap oright vn sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+Xbuffer ol decision vp vn inv
+* Mirror the buffer input load on the other regenerative output.
+Xdummy oright dummy vp vn inv
+.ends
+
+* ---- External reference (VEXT) test path, used only when FRAC = 11 ----
+* 1.8 V to VDDA (3.3 V) level shifter with 5 V-oxide devices; y follows a.
+.subckt ls_hv a y yb vpa vp vn
+Xinv a ab vp vn inv
+Xn1 yb a vn vn sky130_fd_pr__nfet_g5v0d10v5 w=2 l=0.5 ad=0.58 as=0.58 pd=4.58 ps=4.58
+Xn2 y ab vn vn sky130_fd_pr__nfet_g5v0d10v5 w=2 l=0.5 ad=0.58 as=0.58 pd=4.58 ps=4.58
+Xp1 yb y vpa vpa sky130_fd_pr__pfet_g5v0d10v5 w=0.42 l=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42
+Xp2 y yb vpa vpa sky130_fd_pr__pfet_g5v0d10v5 w=0.42 l=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42
+.ends
+
+* Pad-side isolation: 5 V-oxide transmission gate (PMOS body at VDDA, so 3.3 V on the
+* shared line cannot forward-bias it), then a short high-resistance poly resistor and clamp
+* diodes to the 1.8 V rails, so the thin-oxide side never sees more than about VDD + 0.6 V.
+* Sized so VEXT charges all four reference banks (about 3.4 pF each) well within half a clock.
+.subckt vext_in pad core en enb vpa vp vn
+Xn pad en mid vn sky130_fd_pr__nfet_g5v0d10v5 w=10 l=0.5 ad=2.9 as=2.9 pd=20.58 ps=20.58
+Xp pad enb mid vpa sky130_fd_pr__pfet_g5v0d10v5 w=10 l=0.5 ad=2.9 as=2.9 pd=20.58 ps=20.58
+Xr mid core vn sky130_fd_pr__res_high_po_0p35 l=1
+Dclamp_n vn core sky130_fd_pr__diode_pw2nd_05v5 area=4e12 pj=8e6
+Dclamp_p core vp sky130_fd_pr__diode_pd2nw_05v5 area=4e12 pj=8e6
+.ends
+
+* Per-column VEXT switch: a 5 V-oxide NMOS whose gate swings to VDDA (3.3 V). With 1.5 V or more
+* of overdrive it passes 0-1.45 V at every corner (no mid-rail dead zone), and when off its leakage
+* is far below that of thin-oxide or low-threshold switches, which matters on a floating bus at 110 C.
+* The same device, held off with its far terminal at VSS, loads each sum bus for symmetry.
+.subckt nvx a g b vn
+Xn a g b vn sky130_fd_pr__nfet_g5v0d10v5 w=4 l=0.5 ad=1.16 as=1.16 pd=8.58 ps=8.58
+.ends

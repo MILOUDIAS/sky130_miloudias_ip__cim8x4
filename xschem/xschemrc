@@ -1,0 +1,5 @@
+# Library paths for the macro's schematics: xschem devices, open_pdks sky130 symbols, this folder.
+set XSCHEM_LIBRARY_PATH {}
+append XSCHEM_LIBRARY_PATH ${XSCHEM_SHAREDIR}/xschem_library
+append XSCHEM_LIBRARY_PATH :$env(PDK_ROOT)/sky130A/libs.tech/xschem
+append XSCHEM_LIBRARY_PATH :[file dirname [file normalize [info script]]]

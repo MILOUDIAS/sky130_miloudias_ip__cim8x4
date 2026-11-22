@@ -1,0 +1,252 @@
+* Generated regular array. Include cells.spice before use.
+.subckt acim_array vp vn sam shr ev x0 x1 x2 x3 x4 x5 x6 x7 wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 d0 d1 d2 d3 coarse0 coarse1 coarse2 coarse3 coarse4 coarse5 coarse6 fine0 fine1 fine2 fine3 y0 y1 y2 y3 q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 q26 q27 q28 q29 q30 q31 vpa vext vsel vg
+Xi_sam sam samb vp vn inv
+Xi_shr shr shrb vp vn inv
+Xi_wr0 wr0 wr0b vp vn inv
+Xi_wr1 wr1 wr1b vp vn inv
+Xi_wr2 wr2 wr2b vp vn inv
+Xi_wr3 wr3 wr3b vp vn inv
+Xi_wr4 wr4 wr4b vp vn inv
+Xi_wr5 wr5 wr5b vp vn inv
+Xi_wr6 wr6 wr6b vp vn inv
+Xi_wr7 wr7 wr7b vp vn inv
+Xls_vsel vsel vsel_h vsel_hb vpa vp vn ls_hv
+Xls_vg vg vg_h vg_hb vpa vp vn ls_hv
+Xvext_in vext vxi vsel_h vsel_hb vpa vp vn vext_in
+Xw_0_0 d0 wr0 wr0b q0 vp vn weight
+Xand_0_0 x0 q0 prod_0_0 vp vn and2
+Xw_1_0 d0 wr1 wr1b q4 vp vn weight
+Xand_1_0 x1 q4 prod_1_0 vp vn and2
+Xw_2_0 d0 wr2 wr2b q8 vp vn weight
+Xand_2_0 x2 q8 prod_2_0 vp vn and2
+Xw_3_0 d0 wr3 wr3b q12 vp vn weight
+Xand_3_0 x3 q12 prod_3_0 vp vn and2
+Xw_4_0 d0 wr4 wr4b q16 vp vn weight
+Xand_4_0 x4 q16 prod_4_0 vp vn and2
+Xw_5_0 d0 wr5 wr5b q20 vp vn weight
+Xand_5_0 x5 q20 prod_5_0 vp vn and2
+Xw_6_0 d0 wr6 wr6b q24 vp vn weight
+Xand_6_0 x6 q24 prod_6_0 vp vn and2
+Xw_7_0 d0 wr7 wr7b q28 vp vn weight
+Xand_7_0 x7 q28 prod_7_0 vp vn and2
+Xclear_sum0 vn sum0 sam samb vp vn tg
+Xc_sum0_0 prod_0_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_1 prod_1_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_2 prod_2_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_3 prod_3_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_4 prod_4_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_5 prod_5_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_6 prod_6_0 sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_7 prod_7_0 sum0 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum0_8 prod_7_0 sum0 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum0_9 prod_7_0 sum0 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum0_10 prod_7_0 sum0 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum0_11 vp sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_12 vp sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_13 vp sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_14 vp sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_15 vn sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_16 vn sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_17 vn sum0 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum0_18 vn sum0 sam samb shr shrb vp vn sample_cap size=4
+Xclear_ref0 vn ref0 sam samb vp vn tg
+Xc_ref0_0 coarse0 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_1 coarse1 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_2 coarse2 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_3 coarse3 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_4 coarse4 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_5 coarse5 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_6 coarse6 ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_7 fine0 ref0 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref0_8 fine1 ref0 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref0_9 fine2 ref0 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref0_10 fine3 ref0 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref0_11 vp ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_12 vp ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_13 vp ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_14 vp ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_15 vn ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_16 vn ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_17 vn ref0 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref0_18 vn ref0 sam samb shr shrb vp vn sample_cap size=4
+Xvx_ref0 vxi vg_h ref0 vn nvx
+Xvx_sum0 vn vn sum0 vn nvx
+Xcmp0 sum0 ref0 ev y0 vp vn compare
+Xw_0_1 d1 wr0 wr0b q1 vp vn weight
+Xand_0_1 x0 q1 prod_0_1 vp vn and2
+Xw_1_1 d1 wr1 wr1b q5 vp vn weight
+Xand_1_1 x1 q5 prod_1_1 vp vn and2
+Xw_2_1 d1 wr2 wr2b q9 vp vn weight
+Xand_2_1 x2 q9 prod_2_1 vp vn and2
+Xw_3_1 d1 wr3 wr3b q13 vp vn weight
+Xand_3_1 x3 q13 prod_3_1 vp vn and2
+Xw_4_1 d1 wr4 wr4b q17 vp vn weight
+Xand_4_1 x4 q17 prod_4_1 vp vn and2
+Xw_5_1 d1 wr5 wr5b q21 vp vn weight
+Xand_5_1 x5 q21 prod_5_1 vp vn and2
+Xw_6_1 d1 wr6 wr6b q25 vp vn weight
+Xand_6_1 x6 q25 prod_6_1 vp vn and2
+Xw_7_1 d1 wr7 wr7b q29 vp vn weight
+Xand_7_1 x7 q29 prod_7_1 vp vn and2
+Xclear_sum1 vn sum1 sam samb vp vn tg
+Xc_sum1_0 prod_0_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_1 prod_1_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_2 prod_2_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_3 prod_3_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_4 prod_4_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_5 prod_5_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_6 prod_6_1 sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_7 prod_7_1 sum1 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum1_8 prod_7_1 sum1 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum1_9 prod_7_1 sum1 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum1_10 prod_7_1 sum1 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum1_11 vp sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_12 vp sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_13 vp sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_14 vp sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_15 vn sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_16 vn sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_17 vn sum1 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum1_18 vn sum1 sam samb shr shrb vp vn sample_cap size=4
+Xclear_ref1 vn ref1 sam samb vp vn tg
+Xc_ref1_0 coarse0 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_1 coarse1 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_2 coarse2 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_3 coarse3 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_4 coarse4 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_5 coarse5 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_6 coarse6 ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_7 fine0 ref1 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref1_8 fine1 ref1 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref1_9 fine2 ref1 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref1_10 fine3 ref1 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref1_11 vp ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_12 vp ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_13 vp ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_14 vp ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_15 vn ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_16 vn ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_17 vn ref1 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref1_18 vn ref1 sam samb shr shrb vp vn sample_cap size=4
+Xvx_ref1 vxi vg_h ref1 vn nvx
+Xvx_sum1 vn vn sum1 vn nvx
+Xcmp1 sum1 ref1 ev y1 vp vn compare
+Xw_0_2 d2 wr0 wr0b q2 vp vn weight
+Xand_0_2 x0 q2 prod_0_2 vp vn and2
+Xw_1_2 d2 wr1 wr1b q6 vp vn weight
+Xand_1_2 x1 q6 prod_1_2 vp vn and2
+Xw_2_2 d2 wr2 wr2b q10 vp vn weight
+Xand_2_2 x2 q10 prod_2_2 vp vn and2
+Xw_3_2 d2 wr3 wr3b q14 vp vn weight
+Xand_3_2 x3 q14 prod_3_2 vp vn and2
+Xw_4_2 d2 wr4 wr4b q18 vp vn weight
+Xand_4_2 x4 q18 prod_4_2 vp vn and2
+Xw_5_2 d2 wr5 wr5b q22 vp vn weight
+Xand_5_2 x5 q22 prod_5_2 vp vn and2
+Xw_6_2 d2 wr6 wr6b q26 vp vn weight
+Xand_6_2 x6 q26 prod_6_2 vp vn and2
+Xw_7_2 d2 wr7 wr7b q30 vp vn weight
+Xand_7_2 x7 q30 prod_7_2 vp vn and2
+Xclear_sum2 vn sum2 sam samb vp vn tg
+Xc_sum2_0 prod_0_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_1 prod_1_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_2 prod_2_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_3 prod_3_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_4 prod_4_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_5 prod_5_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_6 prod_6_2 sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_7 prod_7_2 sum2 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum2_8 prod_7_2 sum2 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum2_9 prod_7_2 sum2 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum2_10 prod_7_2 sum2 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum2_11 vp sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_12 vp sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_13 vp sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_14 vp sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_15 vn sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_16 vn sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_17 vn sum2 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum2_18 vn sum2 sam samb shr shrb vp vn sample_cap size=4
+Xclear_ref2 vn ref2 sam samb vp vn tg
+Xc_ref2_0 coarse0 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_1 coarse1 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_2 coarse2 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_3 coarse3 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_4 coarse4 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_5 coarse5 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_6 coarse6 ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_7 fine0 ref2 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref2_8 fine1 ref2 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref2_9 fine2 ref2 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref2_10 fine3 ref2 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref2_11 vp ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_12 vp ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_13 vp ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_14 vp ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_15 vn ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_16 vn ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_17 vn ref2 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref2_18 vn ref2 sam samb shr shrb vp vn sample_cap size=4
+Xvx_ref2 vxi vg_h ref2 vn nvx
+Xvx_sum2 vn vn sum2 vn nvx
+Xcmp2 sum2 ref2 ev y2 vp vn compare
+Xw_0_3 d3 wr0 wr0b q3 vp vn weight
+Xand_0_3 x0 q3 prod_0_3 vp vn and2
+Xw_1_3 d3 wr1 wr1b q7 vp vn weight
+Xand_1_3 x1 q7 prod_1_3 vp vn and2
+Xw_2_3 d3 wr2 wr2b q11 vp vn weight
+Xand_2_3 x2 q11 prod_2_3 vp vn and2
+Xw_3_3 d3 wr3 wr3b q15 vp vn weight
+Xand_3_3 x3 q15 prod_3_3 vp vn and2
+Xw_4_3 d3 wr4 wr4b q19 vp vn weight
+Xand_4_3 x4 q19 prod_4_3 vp vn and2
+Xw_5_3 d3 wr5 wr5b q23 vp vn weight
+Xand_5_3 x5 q23 prod_5_3 vp vn and2
+Xw_6_3 d3 wr6 wr6b q27 vp vn weight
+Xand_6_3 x6 q27 prod_6_3 vp vn and2
+Xw_7_3 d3 wr7 wr7b q31 vp vn weight
+Xand_7_3 x7 q31 prod_7_3 vp vn and2
+Xclear_sum3 vn sum3 sam samb vp vn tg
+Xc_sum3_0 prod_0_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_1 prod_1_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_2 prod_2_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_3 prod_3_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_4 prod_4_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_5 prod_5_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_6 prod_6_3 sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_7 prod_7_3 sum3 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum3_8 prod_7_3 sum3 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum3_9 prod_7_3 sum3 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum3_10 prod_7_3 sum3 sam samb shr shrb vp vn sample_cap size=1
+Xc_sum3_11 vp sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_12 vp sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_13 vp sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_14 vp sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_15 vn sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_16 vn sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_17 vn sum3 sam samb shr shrb vp vn sample_cap size=4
+Xc_sum3_18 vn sum3 sam samb shr shrb vp vn sample_cap size=4
+Xclear_ref3 vn ref3 sam samb vp vn tg
+Xc_ref3_0 coarse0 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_1 coarse1 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_2 coarse2 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_3 coarse3 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_4 coarse4 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_5 coarse5 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_6 coarse6 ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_7 fine0 ref3 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref3_8 fine1 ref3 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref3_9 fine2 ref3 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref3_10 fine3 ref3 sam samb shr shrb vp vn sample_cap size=1
+Xc_ref3_11 vp ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_12 vp ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_13 vp ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_14 vp ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_15 vn ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_16 vn ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_17 vn ref3 sam samb shr shrb vp vn sample_cap size=4
+Xc_ref3_18 vn ref3 sam samb shr shrb vp vn sample_cap size=4
+Xvx_ref3 vxi vg_h ref3 vn nvx
+Xvx_sum3 vn vn sum3 vn nvx
+Xcmp3 sum3 ref3 ev y3 vp vn compare
+.ends acim_array

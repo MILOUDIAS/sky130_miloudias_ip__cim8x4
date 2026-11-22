@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Compute datapath" id="acim-datapath">
+    <mxGraphModel grid="1" gridSize="10" page="0" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x" value="Input vector&#10;X[7:0]" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#133d39;fillColor=#f1f6f4;strokeColor=#94aba6;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="10" y="6" width="112" height="44" />
+        </mxCell>
+        <mxCell id="threshold" value="Threshold&#10;T and FRAC" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#133d39;fillColor=#f1f6f4;strokeColor=#94aba6;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="10" y="66" width="112" height="44" />
+        </mxCell>
+        <mxCell id="weights" value="8 × 4 weight latches&#10;and charge-sharing array" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#133d39;fillColor=#e0efeb;strokeColor=#316b60;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="157" y="6" width="218" height="44" />
+        </mxCell>
+        <mxCell id="references" value="4 local reference replicas" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#133d39;fillColor=#e0efeb;strokeColor=#316b60;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="157" y="66" width="218" height="44" />
+        </mxCell>
+        <mxCell id="cmp" value="4 clocked&#10;comparators" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#133d39;fillColor=#e0efeb;strokeColor=#316b60;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="423" y="31" width="140" height="54" />
+        </mxCell>
+        <mxCell id="out" value="Latched results&#10;Y[3:0]" vertex="1" parent="1" style="rounded=1;arcSize=12;whiteSpace=nowrap;html=0;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#ffffff;fillColor=#16584e;strokeColor=#16584e;strokeWidth=1.5;">
+          <mxGeometry as="geometry" x="603" y="31" width="144" height="54" />
+        </mxCell>
+        <mxCell id="data_x" edge="1" parent="1" source="x" target="weights" style="endArrow=block;endFill=1;strokeColor=#376b61;strokeWidth=1.6;rounded=0;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0;entryY=0.5;entryPerimeter=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="code" edge="1" parent="1" source="threshold" target="references" style="endArrow=block;endFill=1;strokeColor=#376b61;strokeWidth=1.6;rounded=0;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0;entryY=0.5;entryPerimeter=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sum" edge="1" parent="1" source="weights" target="cmp" style="endArrow=block;endFill=1;strokeColor=#376b61;strokeWidth=1.6;rounded=0;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0;entryY=0.24;entryPerimeter=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ref" edge="1" parent="1" source="references" target="cmp" style="endArrow=block;endFill=1;strokeColor=#376b61;strokeWidth=1.6;rounded=0;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0;entryY=0.76;entryPerimeter=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="bits" edge="1" parent="1" source="cmp" target="out" style="endArrow=block;endFill=1;strokeColor=#376b61;strokeWidth=1.6;rounded=0;exitX=1;exitY=0.5;exitPerimeter=1;entryX=0;entryY=0.5;entryPerimeter=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
